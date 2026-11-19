@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysteryBox - Permainan Misteri</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <h2>✦ MysteryBox</h2>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#beranda">Beranda</a>
+            <a href="#cara-main">Cara Bermain</a>
+            <a href="#permainan">Permainan</a>
+            <a href="#tentang">Tentang</a>
+            <button id="themeToggle">☾</button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </nav>
+</header>
+
+<!-- BERANDA -->
+<section class="hero container" id="beranda">
+
+    <div class="hero-copy">
+        <p class="eyebrow">SEBUAH TANTANGAN MENANTIMU</p>
+
+        <h1>Berani membuka<br>
+            <span>misteri di dalamnya?</span>
+        </h1>
+
+        <p class="hero-text">
+            Setiap kotak menyimpan teka-teki.
+            Gunakan logikamu, temukan petunjuk,
+            dan pecahkan rahasia yang tersembunyi.
+        </p>
+
+        <a href="#permainan" class="primary-btn">
+            Mulai Bermain →
+        </a>
+
+        <div class="stats">
+            <div><strong>03</strong><small>Teka-teki</small></div>
+            <div><strong>∞</strong><small>Rasa penasaran</small></div>
+            <div><strong>01</strong><small>Detektif: kamu</small></div>
+        </div>
+    </div>
+
+    <div class="hero-art">
+        <div class="mystery-box">
+            <div class="box-lid"></div>
+            <div class="box-body">?</div>
+        </div>
+        <p>🔒 Rahasia menunggumu</p>
+    </div>
+
+</section>
+
+<!-- CARA BERMAIN -->
+<section class="how-section" id="cara-main">
+    <div class="container">
+
+        <div class="section-heading">
+            <p class="eyebrow">PETUNJUK DETEKTIF</p>
+            <h2>Bagaimana cara <span>bermain?</span></h2>
+            <p>Ikuti tiga langkah sederhana untuk mengungkap misteri.</p>
+        </div>
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+                <h1>📦</h1>
+                <h3>1. Pilih Kotak</h3>
+                <p>Pilih salah satu tantangan misteri.</p>
+            </div>
+
+            <div class="step-card">
+                <h1>🧠</h1>
+                <h3>2. Pecahkan Teka-teki</h3>
+                <p>Baca petunjuk dan pikirkan jawabannya.</p>
+            </div>
+
+            <div class="step-card">
+                <h1>🔓</h1>
+                <h3>3. Buka Rahasia</h3>
+                <p>Masukkan jawaban untuk membuka misteri.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PERMAINAN -->
+<section class="game-section container" id="permainan">
+
+    <div class="section-heading">
+        <p class="eyebrow">AREA INVESTIGASI</p>
+        <h2>Pilih <span>Mystery Box</span></h2>
+        <p>Selesaikan ketiga tantangan misteri.</p>
+    </div>
+
+    <div class="game-layout">
+
+        <div class="box-list">
+
+            <button class="box-choice active" data-index="0">
+                📦 Kotak 01 - Jejak Waktu
+            </button>
+
+            <button class="box-choice" data-index="1">
+                🎭 Kotak 02 - Identitas Rahasia
+            </button>
+
+            <button class="box-choice" data-index="2">
+                🗝️ Kotak 03 - Kunci Terakhir
+            </button>
+
+            <div class="progress-card">
+                <h4>Progres Misteri</h4>
+                <p id="progressText">0/3</p>
+
+                <div class="progress-track">
+                    <div id="progressFill"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="puzzle-panel">
+
+            <div class="panel-top">
+                <span>● MISTERI AKTIF</span>
+                <span id="levelLabel">LEVEL 01</span>
+            </div>
+
+            <div class="puzzle-symbol" id="puzzleSymbol">⏳</div>
+
+            <h2 id="puzzleTitle">Jejak Waktu</h2>
+
+            <p id="puzzleDescription">
+                Aku punya wajah dan dua tangan,
+                tetapi tidak punya kaki.
+                Aku selalu bergerak,
+                tetapi tidak pernah berjalan.
+                Apakah aku?
+            </p>
+
+            <button class="hint-btn" id="hintBtn">
+                💡 Tampilkan Petunjuk
+            </button>
+
+            <p id="hintText" hidden></p>
+
+            <form id="answerForm">
+
+                <label for="answerInput">TULIS JAWABANMU</label>
+
+                <div class="answer-row">
+                    <input
+                        type="text"
+                        id="answerInput"
+                        placeholder="Ketik jawaban di sini..."
+                        required
+                    >
+
+                    <button type="submit">Periksa →</button>
+                </div>
+
+            </form>
+
+            <p id="feedback" class="feedback">
+                Pilih jawabanmu dengan teliti, detektif.
+            </p>
+
+            <p id="attemptText">Percobaan: 0</p>
+
+        </div>
+    </div>
+</section>
+
+<!-- TENTANG -->
+<section class="about-section" id="tentang">
+    <div class="container about-content">
+
+        <div>
+            <p class="eyebrow">TENTANG MYSTERYBOX</p>
+            <h2>Asah logika.<br>
+                <span>Uji rasa ingin tahu.</span>
+            </h2>
+        </div>
+
+        <p>
+            MysteryBox adalah permainan teka-teki sederhana
+            yang mengajakmu berpikir kreatif dan teliti.
+            Baca setiap petunjuk, coba jawab, dan nikmati
+            proses menemukan jawabannya.
+        </p>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>✦ MysteryBox</h3>
+    <p>© 2026 MysteryBox. Pecahkan misterinya!</p>
+</footer>
+
+</body>
+</html>
