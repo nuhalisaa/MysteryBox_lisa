@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+    --bg: #0d1020;
+    --surface: #151a30;
+    --text: #f5f5ff;
+    --muted: #a4abc5;
+    --purple: #a78bfa;
+    --pink: #f0abfc;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+/* NAVBAR */
+header {
+    position: sticky;
+    top: 0;
+    background: #0d1020ee;
+    z-index: 10;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    color: var(--purple);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+button {
+    cursor: pointer;
+}
+
+#themeToggle, .menu-toggle {
+    padding: 9px 13px;
+    border: 1px solid #ffffff22;
+    background: var(--surface);
+    color: white;
+    border-radius: 10px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* BERANDA */
+.hero {
+    min-height: 580px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.eyebrow {
+    color: var(--pink);
+    letter-spacing: 2px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font: 700 55px 'Space Grotesk';
+    line-height: 1.1;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.about-content h2 span {
+    color: var(--purple);
+}
+
+.hero-text {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 500px;
+}
+
+.primary-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 22px;
+    border-radius: 10px;
+    background: linear-gradient(100deg, #8b72ed, #c084fc);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+}
+
+.stats {
+    display: flex;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.stats div {
+    display: grid;
+}
+
+.stats strong {
+    color: var(--pink);
+    font-size: 22px;
+}
+
+.stats small {
+    color: var(--muted);
+}
+
+/* KOTAK MISTERI */
+.hero-art {
+    display: grid;
+    place-items: center;
+    min-height: 400px;
+}
+
+.mystery-box {
+    position: relative;
+    width: 220px;
+    height: 180px;
+    filter: drop-shadow(0 20px 30px #0008);
+}
+
+.box-body {
+    width: 220px;
+    height: 140px;
+    background: linear-gradient(135deg, #8060cf, #39256f);
+    display: grid;
+    place-items: center;
+    font-size: 80px;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.box-lid {
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    width: 240px;
+    height: 45px;
+    background: #b99aff;
+    border-radius: 8px;
+    transform: rotate(-5deg);
+    z-index: 2;
+}
+
+.hero-art p {
+    color: var(--pink);
+}
+
+/* CARA BERMAIN */
+.how-section,
+.about-section {
+    background: #11152a;
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font: 700 38px 'Space Grotesk';
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    background: var(--surface);
+    padding: 25px;
+    border: 1px solid #ffffff15;
+    border-radius: 16px;
+    transition: .3s;
+}
+
+.step-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple);
+}
+
+.step-card h1 {
+    font-size: 35px;
+}
+
+.step-card p {
+    color: var(--muted);
+}
+
+/* PERMAINAN */
+.game-section {
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 22px;
+}
+
+.box-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.box-choice {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid #ffffff20;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: left;
+    transition: .3s;
+}
+
+.box-choice:hover,
+.box-choice.active {
+    border-color: var(--purple);
+    background: #201d3b;
+}
+
+.progress-card {
+    background: #1b213b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.progress-card p {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.progress-track {
+    height: 8px;
+    background: #0d1020;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--purple), var(--pink));
+    transition: .3s;
+}
+
+/* PANEL TEKA-TEKI */
+.puzzle-panel {
+    background: var(--surface);
+    border: 1px solid #a78bfa55;
+    border-radius: 18px;
+    padding: 30px;
+}
+
+.panel-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#levelLabel {
+    color: var(--pink);
+}
+
+.puzzle-symbol {
+    margin-top: 25px;
+    font-size: 40px;
+}
+
+.puzzle-panel h2 {
+    font-family: 'Space Grotesk';
+}
+
+.puzzle-panel > p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.hint-btn {
+    background: #a78bfa20;
+    border: 1px solid var(--purple);
+    color: var(--pink);
+    padding: 10px 15px;
+    border-radius: 9px;
+}
+
+#hintText {
+    color: var(--pink);
+}
+
+#answerForm {
+    margin-top: 25px;
+}
+
+#answerForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.answer-row {
+    display: flex;
+    gap: 10px;
+}
+
+.answer-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #ffffff30;
+    background: #0d1020;
+    color: white;
+}
+
+.answer-row button {
+    padding: 12px 18px;
+    background: var(--purple);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.answer-row button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.feedback {
+    min-height: 25px;
+    font-size: 14px;
+}
+
+.feedback.success {
+    color: #86efac;
+}
+
+.feedback.error {
+    color: #fda4af;
+}
+
+/* TENTANG */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font: 700 40px 'Space Grotesk';
+}
+
+.about-content p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #ffffff15;
+}
+
+footer h3 {
+    color: var(--purple);
+}
+
+footer p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* LIGHT MODE */
+body.light {
+    --bg: #f5f3ff;
+    --surface: #ffffff;
+    --text: #24213b;
+    --muted: #68647f;
+}
+
+body.light .how-section,
+body.light .about-section {
+    background: #ebe8fa;
+}
+
+body.light .puzzle-panel {
+    color: var(--text);
+}
+
+body.light .answer-row input {
+    background: #f7f5ff;
+    color: #24213b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 760px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: var(--surface);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .answer-row {
+        flex-direction: column;
+    }
+
+    .answer-row button {
+        padding: 14px;
+    }
+}
